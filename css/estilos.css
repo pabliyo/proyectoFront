@@ -1,0 +1,38 @@
+body {
+    background: #69c4e5;
+}
+
+.navbar {
+    background-color: #090145;
+    text-align: start;
+    padding: 10px 0;
+}
+
+.navbar ul li {
+    display: inline;
+    margin: 0 auto;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.navbar ul li a {
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.titulosMain {
+    font-size: 25px;
+    color: rgb(6, 3, 66);
+}
+
+footer {
+    background: #746d6d;
+}
