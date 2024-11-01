@@ -3,10 +3,19 @@ body {
     background: #69c4e5;
 }
 
+header{
+    display: flex;
+    min-height: 70px;
+    justify-content: space-between;
+    background-color: white;
+}
+
 .navbar {
+    display: flex;
     background-color: #090145;
     text-align: start;
     padding: 10px 0;
+    justify-content: center;
 }
 
 .navbar ul li {
@@ -26,6 +35,42 @@ body {
     font-size: 30px;
     text-decoration: none;
     padding: 10px;
+}
+
+main {
+    
+    background-color: rgb(229, 230, 232);
+}
+
+.contenedorItems {
+    width: 100%;
+    height: 200px;
+    padding: 10px;
+    margin: 10px;
+    display:flex;
+    justify-content: center;
+	flex-wrap: wrap;
+
+}
+
+.item {
+    display:flex;
+    
+    border: solid #090145 1px;
+    margin: 30px;
+    justify-content: space-between;
+    
+    background-color: white;
+}
+
+.imgItem {
+    width: 150px;
+} 
+
+.botonItem {
+    background-color: #090145;
+    justify-content: center;
+    color: white;
 }
 
 #user {
@@ -55,5 +100,5 @@ footer ul li a {
 
 #tituloFooter {
     font-size: 30px;
-    color: rgb(242, 219, 219);
+    color: rgb(255, 255, 255);
 }
