@@ -16,6 +16,11 @@ header {
     background-color: white;
 }
 
+nav {
+	display: flex;
+	flex-direction: column;
+}
+
 .seccionMain {
     display: block;
     justify-items: center;
