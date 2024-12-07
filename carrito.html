@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pagina principal</title>
+    <title>Carrito</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
@@ -30,47 +30,19 @@
             <div class="iconosUser">
                 <ul>
                     <li><a href="#"><i id="user" class="fa-solid fa-user"></i></a></li>
-                    <li><a href="#"><i id="cart" class="fa-solid fa-shopping-cart"></i></a></li>
+                    <li><a href="carrito.html"><i id="cart" class="fa-solid fa-shopping-cart"></i></a></li>
                 </ul>
             </div>
         </nav>
     </header>
+    
+
     <main>
-        <div class="contenedorItems">
-            <div class="item" data-id="001" data-nombre="auriculares-m10" data-precio="9999">
-                <div class="contenedorTituloItem">
-                    <h2 class="tituloItem">AURICULARES M10 BLUETHOOT 5.3</h2>
-                </div>    
-                <img src="img/aur-m10.PNG" alt="" class="imgItem">
-                <span class="precioItem">$9999</span>
-                <div class="contenedorPrecioItem">
-                    <h2 class="precioItemRebajado">$9999</h2>
-                    <h2 class="precioItemOff">10% OFF</h2>
-                </div>
-                <button class="agregarCarrito" id="botonAg">AGREGAR</button>
-            </div>
-            <div class="item">
-                <div class="contenedorTituloItem">
-                    <h2 class="tituloItem">AURICULARES F9-5 BLUETHOOT 5.3</h2>
-                </div>    
-                <img src="img/f9-5.png" alt="" class="imgItem">
-                <div class="contenedorPrecioItem">
-                    <h2 class="precioItemRebajado">$9999</h2>
-                    <h2 class="precioItemOff">OFERTA!</h2>
-                </div>
-                <button class="botonItem">AGREGAR</button>
-            </div>
-            <div class="item">
-                <div class="contenedorTituloItem">
-                    <h2 class="tituloItem">SECAPLATOS 2 NIVELES METALICO</h2>
-                </div>    
-                <img src="img/secaplato.png" alt="" class="imgItem">
-                <div class="contenedorPrecioItem">
-                    <h2 class="precioItemRebajado">$9999</h2>
-                </div>
-                <button class="botonItem">AGREGAR</button>
-            </div>
-        </div>           
+        <div id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-carrito"></ul>
+            <button id="vaciar-carrito">Vaciar Carrito</button>
+        </div>
     </main>
     <footer>
         <h2 id="tituloFooter">Informacion de la empresa</h2>
@@ -79,9 +51,8 @@
             <li><a href="https://www.instagram.com/ottashare/profilecard/?igsh=MTk0Y3o3cmJlMXFpcg=="><i id="instagram" class="fa fa-instagram" aria-hidden="true"></i>  Ottashare</a></li>
             <li><a href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.427568286309!2d-58.4247485!3d-34.6439034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccba46c4b854f%3A0x2aeecc22aa5c76bd!2sComuna%204%2C%20Gual%202392%2C%20C1437DED%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1727700958461!5m2!1ses-419!2sar"><i class="fa fa-map-marker-alt"></i> Ubicacion</a></li><br>
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.427568286309!2d-58.4247485!3d-34.6439034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccba46c4b854f%3A0x2aeecc22aa5c76bd!2sComuna%204%2C%20Gual%202392%2C%20C1437DED%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1727700958461!5m2!1ses-419!2sar" width="300" height="225" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            
         </ul>
     </footer>
-    <script src="js/script.js"></script>
+    <script src="js/script.js"></script>  
 </body>
 </html>

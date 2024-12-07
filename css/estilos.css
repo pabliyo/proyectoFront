@@ -167,7 +167,7 @@ header {
     
 }
 
-.botonItem {
+.agregarCarrito {
     background-color: #090145;
     font-weight: 700;
     width: 100px;
@@ -188,7 +188,6 @@ header {
     gap: 20px;
   }
 }
-
 
 .contFormulario {
     font-weight: 600;
