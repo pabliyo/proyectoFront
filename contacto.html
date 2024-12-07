@@ -13,41 +13,48 @@
 </head>
 <body>
     <header>
-        <a href="#" class="logo">
-            <img src="img/banner.png" alt="logo_ottashare">
-        </a>    
+        <div class="contLogo">
+             <a href="#" class="logo">
+                <img src="img/banner.png" alt="logo_ottashare">
+            </a> 
+        </div>
+        <nav class="navbar">
+            <div class="paginas">
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="productos.html">Productos</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                </ul>
+            </div>
+            <div class="iconosUser">
+                <ul>
+                    <li><a href="#"><i id="user" class="fa-solid fa-user"></i></a></li>
+                    <li><a href="#"><i id="cart" class="fa-solid fa-shopping-cart"></i></a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
-    <nav class="navbar">
-        <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="productos.html">Productos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-        </ul>
-        <ul>
-            <li><a href="#"><i id="user" class="fa-solid fa-user"></i></a></li>
-            <li><a href="#"><i id="cart" class="fa-solid fa-shopping-cart"></i></a></li>
-        </ul>
-    </nav>
     <main>
         <h2 class="titulosMain">Formulario de contacto</h2>
+        <div class="contFormulario">
+            <form action="confiraForm.html" onsubmit="return validarForm()">
+                <fieldset>
+                    <legend class="formulario">Datos personales:</legend>
+                    <label class="formulario" for="fname">Nombre:</label>
+                    <input type="text" id="fname" name="fname" required><br><br>
 
-        <form action="confiraForm.html">
-            <fieldset>
-                <legend class="formulario">Datos personales:</legend>
-                <label class="formulario" for="fname">Nombre:</label>
-                <input type="text" id="fname" name="fname" required><br><br>
+                    <label class="formulario" for="email">Email:</label>
+                    <input type="email" id="email" name="email" required><br><br>
 
-                <label class="formulario" for="email">Email:</label>
-                <input type="email" id="email" name="email" required><br><br>
+                    <label class="formulario" for="birthday">Fecha de nacimiento:</label>
+                    <input type="date" id="birthday" name="birthday"><br><br>
 
-                <label class="formulario" for="birthday">Fecha de nacimiento:</label>
-                <input type="date" id="birthday" name="birthday"><br><br>
-
-                <label class="formulario" for="question">Su consulta: <textarea name="question" id="question" rows="10" cols="40" required></textarea></label><br><br>
-                <input class="botonItem" type="submit" value="Enviar">
-            </fieldset>
-        </form>
+                    <label class="formulario" for="question">Su consulta: <textarea name="question" id="question" rows="10" cols="40" required></textarea></label><br><br>
+                    <input class="botonItem" type="submit" value="Enviar">
+                </fieldset>
+            </form>
+        </div>
     </main>
 
     <footer>
@@ -60,5 +67,6 @@
             
         </ul>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

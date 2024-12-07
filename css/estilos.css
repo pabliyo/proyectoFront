@@ -9,42 +9,52 @@ body {
     background: #69c4e5;
 }
 
+
 header {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     background-color: white;
+    justify-content: space-between; 
+    flex-direction: column;
+    align-items: center;  
 }
 
 .contLogo {
-    height: auto;
-    width: auto;
-    color: white;
+    text-align: center; 
 }
 
 .contLogo img {
-   height: auto;
-    width: auto;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
 }
 
 .navbar {
     display: flex;
-    width: 100%;
     background-color: #090145; 
-    justify-content: center;
-	flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+   
+}
+
+.navbar a {
+    transition: all 0.5s ease;
+}
+  
+.navbar a:hover {
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    font-size: 40px;
 }
 
 .navbar ul li {
-    display: inline-block;
-    margin: 0;
+    margin: 0 10px;
 }
 
 .navbar ul {
     list-style: none;
     padding: 0;
     margin: 0 ;
-    display: inline-block;
+    display: flex;
 }
 
 .navbar ul li a {
@@ -57,13 +67,13 @@ header {
 .paginas{
     box-sizing: border-box;
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
 .iconosUser{
     display:flex;
     box-sizing: border-box;
-	justify-content: right;
+	align-items: center;
 }
 
 #user {
@@ -166,9 +176,23 @@ header {
     color: white;
 }
 
-.formulario {
-    font-size: 20px;
+.contFormulario {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  gap: 20px;
+
+  @media (min-width: 768px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+
+.contFormulario {
     font-weight: 600;
+    font-size: 1.2em;
 }
 
 
@@ -197,3 +221,32 @@ footer ul li a {
     color: rgb(255, 255, 255);
 }
 
+@media (min-width: 768px) {
+    .contFormulario {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .contLogo {
+        width: 100%; 
+    }
+
+    .contLogo img {
+        max-width: 80%;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar ul li {
+        margin: 10px 0;
+    }
+}

@@ -1,37 +1,14 @@
-//Login
-/*
-const usuarioBD ="user"
-const passBD ="123456"
-
-let usuario = prompt("Ingrese su usuario:")
-let pass = prompt("Ingrese su clave:")
-
-if((usuario==usuarioBD) && (pass==passBD)){
-    alert("ingreso exitoso!")
-}else{
-    alert("el usuario o contraseña es incorrecto")
+function validarForm() {
+    const name = document.getElementById('fname').value;
+    const email = document.getElementById('email').value;
+    const birthday = document.getElementById('birthday').value;
+    const question = document.getElementById('question').value;
+  
+    if (name === '' || email === '' || birthday === '' || question === '') {
+      console.error('Por favor, complete todos los campos del formulario.');
+      return false; 
+    } else {
+      console.log('Formulario enviado correctamente.');
+      return true;
+    }
 }
-    */
-
-/*
-function saludar () {
-
-}
-
-*/
-
-//funcion on click
-
-/*
-html
-h1 id="titulo">Contenido<h1/>
-
-JS
-document.getElementById("titulo").textContent = "cambio contenido"
-*/
-
-/*
-*/
-
-/*
-*/
