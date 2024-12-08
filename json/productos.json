@@ -3,6 +3,7 @@
   {
     "id": 1,
     "nombre": "Auriculares Bluethoot M10",
+    "descripcion": "Los auriculares Bluetooth M10 destacan por su diseño ergonómico y ligero, brindando comodidad durante largos períodos de uso. Ofrecen sonido de alta calidad, con graves profundos y agudos nítidos.",
     "precio": 12000,
     "precioRebajado": 8000,
     "descuento": 33,
@@ -11,6 +12,7 @@
   {
     "id": 2,
     "nombre": "Auriculares Bluethoot F9",
+    "descripcion": "Los auriculares Bluetooth F9 ofrecen un sonido envolvente con graves potentes y agudos claros. Su diseño compacto y ergonómico garantiza comodidad y ajuste perfecto.",
     "precio": 9000,
     "precioRebajado": 6000,
     "descuento": 33,
@@ -19,6 +21,7 @@
   {
     "id": 3,
     "nombre": "Auriculares Bluethoot F9 Pro",
+    "descripcion": "Los auriculares Bluetooth F9 Pro son la versión mejorada de los F9, ofreciendo un sonido aún más nítido y potente. Su diseño ergonómico asegura un ajuste cómodo.",
     "precio": 18000,
     "precioRebajado": 9000,
     "descuento": 50,
@@ -27,6 +30,7 @@
   {
     "id": 4,
     "nombre": "Reloj Smartband Mi 8",
+    "descripcion": "La smartband similar al Mi 8 combina un diseño elegante y ligero con una pantalla táctil clara y fácil de usar. Ofrece seguimiento de actividad física, monitoreo de ritmo cardíaco y control de sueño.",
     "precio": 50000,
     "precioRebajado": 40000,
     "descuento": 20,
@@ -35,6 +39,7 @@
   {
     "id": 5,
     "nombre": "Carrito de Compras con Ruedas",
+    "descripcion": "El carrito con ruedas metálicas es robusto y funcional, ideal para hacer compras con facilidad. Su estructura metálica resistente garantiza durabilidad, mientras que las ruedas giratorias permiten un desplazamiento ágil y cómodo.",
     "precio": 30000,
     "precioRebajado": 20000,
     "descuento": 33,
