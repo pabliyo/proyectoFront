@@ -103,7 +103,7 @@ header {
 
 
 
-.contenedorItems {
+#contenedorItems {
     width: 100%;
     height: auto;
     margin: 10px;

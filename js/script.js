@@ -1,3 +1,5 @@
+
+//funcion valida el formilario de contacto que no este vacio ningun campo
 function validarForm() {
     const name = document.getElementById('fname').value;
     const email = document.getElementById('email').value;
@@ -13,7 +15,101 @@ function validarForm() {
     }
 }
 
+/*
+//funcion listar los productos por consola 
+function listarProductos() {
+  fetch('/proyecto/json/productos.json')
+      .then(response => response.json())
+      .then(data => {
+          data.forEach(producto => {
+          console.log(producto.nombre, producto.precio);
+      });
+});
+}
 
+listarProductos();
+*/
+
+/*
+//Crea las cards reemplazando los valores de las etiquetas a partir de un json
+function crearYMostrarProductos() {
+  fetch('/proyecto/json/productos.json')
+    .then(response => response.json())
+    .then(data => {
+      const contenedorProductos = document.getElementById('contenedorItems');
+      const plantillaProducto = `
+        <div class="item">
+          <div class="contenedorTituloItem">
+            <h2 class="tituloItem">${nombre}</h2>
+          </div>
+          <img src="img/${imagen}" alt="${nombre}" class="imgItem">
+          <span class="precioItem">${precio}</span>
+          <div class="contenedorPrecioItem">
+            <h2 class="precioItemRebajado">${precioRebajado}</h2>
+            <h2 class="precioItemOff">${descuento}% OFF</h2>
+          </div>
+          <button class="agregarCarrito" id="botonAg">AGREGAR</button>
+        </div>
+      `;
+
+      data.forEach(producto => {
+        const nuevaTarjeta = plantillaProducto
+          .replace('${nombre}', producto.nombre)
+          .replace('${imagen}', producto.imagen)
+          .replace('${precio}', producto.precio)
+          .replace('${precioRebajado}', producto.precioRebajado)
+          .replace('${descuento}', producto.descuento);
+
+        const elementoTarjeta = document.createElement('div');
+        elementoTarjeta.innerHTML = nuevaTarjeta;
+        contenedorProductos.appendChild(elementoTarjeta);
+      });
+    });
+}
+
+crearYMostrarProductos();
+*/
+function crearYMostrarProductos() {
+  fetch('/proyecto/json/productos.json')
+    .then(response => response.json())
+    .then(data => {
+      const contenedorProductos = document.getElementById('contenedorItems');
+
+      data.forEach(producto => {
+        const plantillaProducto = `
+          <div class="item">
+            <div class="contenedorTituloItem">
+              <h2 class="tituloItem">${producto.nombre}</h2>
+            </div>
+            <img src="img/${producto.imagen}" alt="${producto.nombre}" class="imgItem">
+            <span class="precioItem">${producto.precio}</span>
+            <div class="contenedorPrecioItem">
+              <h2 class="precioItemRebajado">${producto.precioRebajado}</h2>
+              <h2 class="precioItemOff">${producto.descuento}% OFF</h2>
+            </div>
+            <button class="agregarCarrito" id="botonAg">AGREGAR</button>
+          </div>
+      `;
+
+        const { nombre, imagen, precio, precioRebajado, descuento } = producto;
+        
+        const nuevaTarjeta = plantillaProducto
+          .replace('${nombre}', nombre)
+          .replace('${imagen}', imagen)
+          .replace('${precio}', producto.precio)
+          .replace('${precioRebajado}', producto.precioRebajado)
+          .replace('${descuento}', producto.descuento);
+
+        const elementoTarjeta = document.createElement('div');
+        elementoTarjeta.innerHTML = nuevaTarjeta;
+        contenedorProductos.appendChild(elementoTarjeta);
+      });
+    });
+}
+
+crearYMostrarProductos();
+
+//funcionalidad del boton AGREGAR de las cards
 const boton = document.getElementById("botonAg")
 
 function resaltarBoton() {
@@ -28,29 +124,22 @@ function mostrarMensaje() {
   alert("¡Has hecho clic en el botón!");
 }
 
-function listarProductos() {
-    fetch('/proyecto/json/datos.json')
-        .then(response => response.json())
-        .then(data => {
-            data.forEach(producto => {
-            console.log(producto.nombre, producto.precio);
-        });
-  });
+
+/*
+// Función que establece el EventListener() a los botones
+function load() { 
+    
+  boton.addEventListener("click", mostrarMensaje);
+  boton.addEventListener("mouseover", resaltarBoton);
+  boton.addEventListener("mouseout", quitarResaltado);
+  
 }
 
-listarProductos();
-    
-function load() { // Función que establece el EventListener()
-    
-    boton.addEventListener("click", mostrarMensaje);
-    boton.addEventListener("mouseover", resaltarBoton);
-    boton.addEventListener("mouseout", quitarResaltado);
-    
-}
-
-document.addEventListener("DOMContentLoaded", load, false)
+document.addEventListener("DOMContentLoaded", load, false) 
+*/
 
 
+//funcion agregar productos al carrito
 function agregarProducto(event) {
   var producto = {
     id: event.target.getAttribute('id'),

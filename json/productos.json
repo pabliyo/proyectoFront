@@ -1,0 +1,43 @@
+
+[
+  {
+    "id": 1,
+    "nombre": "Auriculares Bluethoot M10",
+    "precio": 12000,
+    "precioRebajado": 8000,
+    "descuento": 33,
+    "imagen": "m10.png"
+  },
+  {
+    "id": 2,
+    "nombre": "Auriculares Bluethoot F9",
+    "precio": 9000,
+    "precioRebajado": 6000,
+    "descuento": 33,
+    "imagen": "f9.png"
+  },
+  {
+    "id": 3,
+    "nombre": "Auriculares Bluethoot F9 Pro",
+    "precio": 18000,
+    "precioRebajado": 9000,
+    "descuento": 50,
+    "imagen": "f9pro.png"
+  },
+  {
+    "id": 4,
+    "nombre": "Reloj Smartband Mi 8",
+    "precio": 50000,
+    "precioRebajado": 40000,
+    "descuento": 20,
+    "imagen": "smartband.png"
+  },
+  {
+    "id": 5,
+    "nombre": "Carrito de Compras con Ruedas",
+    "precio": 30000,
+    "precioRebajado": 20000,
+    "descuento": 33,
+    "imagen": "carrito.png"
+  }
+]
