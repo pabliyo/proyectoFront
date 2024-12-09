@@ -43,7 +43,7 @@ listarProductos();
 
 
 function crearYMostrarProductos() {
-  fetch('/proyecto/json/productos.json')
+  fetch('data/productos.json')
     .then(response => response.json())
     .then(data => {
       const contenedorProductos = document.getElementById('contenedorItems');
