@@ -43,7 +43,7 @@ listarProductos();
 
 
 function crearYMostrarProductos() {
-  fetch('https://github.com/pabliyo/proyectoFront/blob/master/json/productos.json')
+  fetch('https://drive.google.com/drive/folders/1jyEIKEOjGj3cR9UEEOPhtfZD1y7oW7XQ')
     .then(response => response.json())
     .then(data => {
       const contenedorProductos = document.getElementById('contenedorItems');
