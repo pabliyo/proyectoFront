@@ -126,6 +126,30 @@ header {
     overflow-y: auto;
 }
 
+.modal .restar,
+.modal .agregar {
+  background-color: #090145;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#listaProductos {
+    list-style: none;
+    padding: 0;
+}
+  
+#listaProductos li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #ddd; /* Línea divisoria entre items */
+    font-size: 16px; /* Tamaño de letra más grande */
+}
+
 
 #contenedorItems {
     width: 100%;

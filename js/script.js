@@ -66,7 +66,8 @@ function crearTarjetas(data, contenedor) {
         <p class="descripcionItem">${producto.descripcion}</p>
         <span class="precioItem">$${producto.precio}</span>
         <div class="contenedorPrecioItem">
-          <h2 class="precioItemRebajado">$${producto.precioRebajado}</h2>
+          <span class="moneda">$</span>
+          <span class="precioItemRebajado">${producto.precioRebajado}</span>
           <h2 class="precioItemOff">${producto.descuento}% OFF</h2>
         </div>
         <button class="agregarCarrito" id="${producto.id}">AGREGAR</button>
@@ -108,19 +109,73 @@ function agregarEventosATarjetas(tarjetas) {
 }
 
 function agregarAlCarrito(producto) {
-  carrito.push(producto);
+  carrito.push({...producto, cantidad: 1 }); // Clonar el producto y agregar cantidad
   actualizarCarrito();
 }
 
-
 function actualizarCarrito() {
   const carritoContainer = document.getElementById('listaProductos');
+  const totalElement = document.getElementById('total');
   carritoContainer.innerHTML = '';
 
-  // Iterar sobre los productos en el carrito y crear elementos HTML
   carrito.forEach(producto => {
-    const productoEnCarrito = document.createElement('div');
-    productoEnCarrito.textContent = `${producto.nombre} - ${producto.precio}`;
+    const productoEnCarrito = document.createElement('li');
+    productoEnCarrito.innerHTML = `
+      ${producto.nombre} - ${producto.precio} x ${producto.cantidad}
+      <button class="restar">-</button>
+      <button class="agregar">+</button>
+      <button class="eliminar">Eliminar</button>
+    `;
     carritoContainer.appendChild(productoEnCarrito);
+
+    // Agregar event listeners a los botones
+    const restarBtn = productoEnCarrito.querySelector('.restar');
+    const agregarBtn = productoEnCarrito.querySelector('.agregar');
+    const eliminarBtn = productoEnCarrito.querySelector('.eliminar');
+
+    restarBtn.addEventListener('click', () => {
+      // Buscar el producto en el carrito y disminuir la cantidad
+      const index = carrito.findIndex(item => item.nombre === producto.nombre);
+      if (index !== -1 && carrito[index].cantidad > 1) {
+        carrito[index].cantidad--;
+        actualizarCarrito();
+      }
+    });
+
+    agregarBtn.addEventListener('click', () => {
+      // Buscar el producto en el carrito y aumentar la cantidad
+      const index = carrito.findIndex(item => item.nombre === producto.nombre);
+      if (index !== -1) {
+        carrito[index].cantidad++;
+        actualizarCarrito();
+      } else {
+        // Si el producto no existe, agregarlo al carrito
+        agregarAlCarrito(producto);
+      }
+    });
+  
+
+    eliminarBtn.addEventListener('click', () => {
+      // Eliminar el producto del carrito
+      const index = carrito.findIndex(item => item.nombre === producto.nombre);
+      if (index !== -1) {
+        carrito.splice(index, 1);
+        actualizarCarrito();
+      }
+    });
   });
+  calcularTotal();
+}
+
+function calcularTotal() {
+  let total = 0;
+  const totalElement = document.getElementById('total');
+
+  carrito.forEach(producto => {
+    const precio = parseFloat(producto.precio);
+    const cantidad = parseInt(producto.cantidad);
+    total += precio * cantidad;
+  });
+
+  totalElement.textContent = `Total: $${total.toFixed(2)}`;
 }
