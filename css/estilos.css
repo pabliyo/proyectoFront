@@ -319,4 +319,8 @@ footer ul li a {
     .navbar ul li {
         margin: 10px 0;
     }
+
+    .modal {
+        width:60%;
+    }
 }
