@@ -27,15 +27,27 @@
                     <li><a href="nosotros.html">Nosotros</a></li>
                 </ul>
             </div>
+            <div>
+                <h2 id="bienvenidoUser"></h2>
+                <button id="cerrarSesion" onclick="cerrarSesion()">Cerrar sesion</button>
+            </div>
             <div class="iconosUser">
                 <ul>
-                    <li><a href="#"><i id="user" class="fa-solid fa-user"></i></a></li>
-                    <li><a href="#"><i id="cart" class="fa-solid fa-shopping-cart"></i></a></li>
+                    <li><a href="#" aria-label="Mi perfil"><i id="user" class="fa-solid fa-user"></i></a></li>
+                    <li><a href="#" aria-label="Ver carrito" id="btn-carrito"><i id="cart" class="fa-solid fa-shopping-cart"></i></a></li>
                 </ul>
             </div>
         </nav>
     </header>
     <main>
+        <div class="modal" id="carritoModal">
+            <div class="modalContenido">
+                <h2>Tu carrito</h2>
+                <ul id="listaProductos">
+                </ul>
+                <p id="total">Total: $0.00</p>
+            </div>
+        </div>
         <section class="mensaje">
             <h2>¿Quienes somos?</h2>
             <p>Somos Ottashare una empresa en constante crecimiento, que ofrece productos de tecnologia, tanto para usuarios finales como para revendedores.
@@ -56,5 +68,6 @@
         </ul>
     </footer>
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

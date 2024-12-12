@@ -1,13 +1,59 @@
+let haIniciadoSesion = true;
+
+
+if (!haIniciadoSesion || !localStorage.getItem('nombreUsuario')) {
+  window.onload = function() {
+    Swal.fire({
+      title: 'Ingrese su nombre',
+      input: 'text',
+      inputLabel: 'Nombre',
+      showCancelButton: false,
+      confirmButtonText: 'Continuar',
+      cancelButtonText: 'Cancelar',
+      position: 'center',
+      customClass: {
+        confirmButton: 'custom-confirm-button'
+      }
+    }).then((result) => {
+      if (result.isConfirmed) {
+       const nombreUsuario = result.value;
+       if (nombreUsuario.trim() === '') {
+        Swal.fire({
+          icon: 'error',
+          title: 'Oops...',
+          text: 'Por favor, ingrese un nombre válido.',
+        });
+      } else {
+        haIniciadoSesion = true;
+        localStorage.setItem('haIniciadoSesion', haIniciadoSesion);
+        localStorage.setItem('nombreUsuario', nombreUsuario);
+        const userElement = document.getElementById('bienvenidoUser');
+        userElement.textContent = `Bienvenido, ${nombreUsuario}`;
+        localStorage.setItem('bienvenidoUser', userElement.textContent);
+      }
+      }
+    });
+  }
+}
+
+function cerrarSesion(){
+  const userElement = document.getElementById('bienvenidoUser');
+  userElement.textContent = ``;
+  localStorage.clear();
+  location.reload();
+}
+
 let carrito = [];
 
 const btnCarrito = document.getElementById('btn-carrito');
 const modal = document.getElementById('carritoModal');
 
 btnCarrito.addEventListener('click', () => {
-    modal.classList.toggle('active');
+  modal.classList.toggle('active');
 });
 
-
+crearYMostrarProductos();
+cargarCarritoDesdeLocalStorage();
 
 //funcion valida el formulario de contacto que no este vacio ningun campo
 function validarForm() {
@@ -28,7 +74,7 @@ function validarForm() {
 /*
 //funcion listar los productos por consola 
 function listarProductos() {
-  fetch('/proyecto/json/productos.json')
+  fetch('data/productos.json')
       .then(response => response.json())
       .then(data => {
           data.forEach(producto => {
@@ -51,8 +97,6 @@ function crearYMostrarProductos() {
       agregarEventosATarjetas(tarjetas);
     });
 }
-
-crearYMostrarProductos();
 
 function crearTarjetas(data, contenedor) {
   const tarjetas = [];
@@ -108,9 +152,22 @@ function agregarEventosATarjetas(tarjetas) {
   });
 }
 
+function guardarCarritoEnLocalStorage() {
+  localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+function cargarCarritoDesdeLocalStorage() {
+  const carritoGuardado = localStorage.getItem('carrito');
+  if (carritoGuardado) {
+    carrito = JSON.parse(carritoGuardado);
+    actualizarCarrito();
+  }
+}
+
 function agregarAlCarrito(producto) {
-  carrito.push({...producto, cantidad: 1 }); // Clonar el producto y agregar cantidad
+  carrito.push({...producto, cantidad: 1 });
   actualizarCarrito();
+  guardarCarritoEnLocalStorage();
 }
 
 function actualizarCarrito() {
@@ -165,6 +222,7 @@ function actualizarCarrito() {
     });
   });
   calcularTotal();
+  guardarCarritoEnLocalStorage();
 }
 
 function calcularTotal() {

@@ -27,10 +27,14 @@
                     <li><a href="nosotros.html">Nosotros</a></li>
                 </ul>
             </div>
+            <div>
+                <h2 id="bienvenidoUser"></h2>
+                <button id="cerrarSesion" onclick="cerrarSesion()">Cerrar sesion</button>
+            </div>
             <div class="iconosUser">
                 <ul>
                     <li><a href="#" aria-label="Mi perfil"><i id="user" class="fa-solid fa-user"></i></a></li>
-                    <li><a href="#" aria-label="Ver carrito"><i id="cart" class="fa-solid fa-shopping-cart"></i></a></li>
+                    <li><a href="#" aria-label="Ver carrito" id="btn-carrito"><i id="cart" class="fa-solid fa-shopping-cart"></i></a></li>
                 </ul>
             </div>
         </nav>
@@ -38,6 +42,15 @@
     
 
     <main>
+        <div class="modal" id="carritoModal">
+            <div class="modalContenido">
+                <h2>Tu carrito</h2>
+                <ul id="listaProductos">
+                </ul>
+                <p id="total">Total: $0.00</p>
+            </div>
+        </div>
+
         <section class="seccionMain">
             <h3 class="titulosMain">Novedades</h3>
             <iframe width="720" height="480" src="https://www.youtube.com/embed/yyNGgPcmNK0?si=5QiCxCaL6VY_7hUO" title="YouTube video player" frameborder="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -59,6 +72,7 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3282.427568286309!2d-58.4247485!3d-34.6439034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccba46c4b854f%3A0x2aeecc22aa5c76bd!2sComuna%204%2C%20Gual%202392%2C%20C1437DED%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1727700958461!5m2!1ses-419!2sar" width="300" height="225" style="border:1;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </ul>
     </footer>
-    <script src="js/script.js"></script>  
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>  
 </body>
 </html>

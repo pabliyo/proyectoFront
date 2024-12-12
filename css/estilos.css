@@ -101,6 +101,10 @@ header {
     font-weight: 700;
 }
 
+#bienvenidoUser {
+    color: white;
+}
+
 .modal {
     display: none;
     position: absolute;
@@ -244,8 +248,6 @@ header {
     justify-content: center;
     color: white;
 }
-
-
 
 .contFormulario {
   display: flex;
