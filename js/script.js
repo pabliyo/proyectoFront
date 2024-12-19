@@ -1,4 +1,4 @@
-let haIniciadoSesion = true; // Assuming session status
+let haIniciadoSesion = true; 
 
 function solicitarNombreUsuario() {
   Swal.fire({
@@ -13,7 +13,7 @@ function solicitarNombreUsuario() {
     }
   }).then((result) => {
     if (result.isConfirmed) {
-      const nombreUsuario = result.value.trim(); // Trim leading/trailing whitespace
+      const nombreUsuario = result.value.trim(); 
 
       if (nombreUsuario ==='') { 
         Swal.fire({
@@ -34,47 +34,11 @@ function solicitarNombreUsuario() {
   });
 }
 
-// Check session and username on page load
+
 if (!haIniciadoSesion || !localStorage.getItem('nombreUsuario')) {
   solicitarNombreUsuario();
 }
 
-
-
-/*
-function solicitarNombreUsuario() {
-  window.onload = function() {
-  Swal.fire({
-    
-  }).then((result) => {
-    if (result.isConfirmed) {
-      
-      var nombreUsuario = result.value;
-      if (nombreUsuario.trim() === '') {
-        Swal.fire({
-          icon: 'error',
-             title: 'Oops...',
-             text: 'Por favor, ingrese un nombre válido.',
-            });
-            solicitarNombreUsuario(); // Llamamos a la función nuevamente
-      } else {
-        haIniciadoSesion = true;
-                  localStorage.setItem('haIniciadoSesion', haIniciadoSesion);
-                  localStorage.setItem('nombreUsuario', nombreUsuario);
-                  const userElement = document.getElementById('bienvenidoUser');
-                  userElement.textContent = `Bienvenido, ${nombreUsuario}`;
-                  localStorage.setItem('bienvenidoUser', userElement.textContent);
-      
-      }
-    }
-  });
-}}
-*/
-
-
-/*
-
-*/
 
 function cerrarSesion(){
   const userElement = document.getElementById('bienvenidoUser');
