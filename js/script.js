@@ -80,7 +80,7 @@ function cerrarSesion(){
   const userElement = document.getElementById('bienvenidoUser');
   userElement.textContent = ``;
   localStorage.clear();
-  
+  location.reload();
 }
 
 let carrito = [];
